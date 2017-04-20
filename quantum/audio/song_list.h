@@ -1,7 +1,26 @@
+/* Copyright 2016 Jack Humbert
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 #include "musical_notes.h"
 
 #ifndef SONG_LIST_H
 #define SONG_LIST_H
+
+#define COIN_SOUND \
+    E__NOTE(_A5  ),\
+    HD_NOTE(_E6  ),
 
 #define ODE_TO_JOY                                          \
     Q__NOTE(_E4), Q__NOTE(_E4), Q__NOTE(_F4), Q__NOTE(_G4), \
@@ -121,6 +140,14 @@
 #define NUM_LOCK_OFF_SOUND \
     E__NOTE(_E5),          \
     E__NOTE(_D5),
+
+#define UNICODE_WINDOWS \
+    E__NOTE(_B5),       \
+    S__NOTE(_E6),
+
+#define UNICODE_LINUX \
+    E__NOTE(_E6),     \
+    S__NOTE(_B5),
 
 #define COIN_SOUND \
     E__NOTE(_A5  ),      \
