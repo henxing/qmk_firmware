@@ -89,17 +89,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-
-  // The value to return
-  bool return_value = false;
-
   switch (keycode) {
     case QWERTY:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_QWERTY);
       }
+      return false;
       break;
-
     case LOWER:
       // Toggle LOWER layer on when key pressed and off when released
       if (record->event.pressed) {
@@ -107,21 +103,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       } else {
         layer_off(_LOWER);
       }
+      return false;
       break;
-
     case RAISE:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_RAISE);
       }
-      break;
-
-    default:
-
-      // If the keycode is not handled by any of the other cases, the
-      // function should return true
-      return_value = true;
+      return false;
       break;
   }
-
-  return return_value;
+  return true;
 }
